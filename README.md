@@ -1,1 +1,42 @@
-# ErispeETHSOLIDITY
+# ETHEREUM
+
+# DESCRIPTION
+Contract should include public variables, address-to-balance mapping, mint function, and burn function, 
+ensuring sender's balance exceeds planned amount.
+
+# GETTING STARTED
+
+# EXECUTING PROGRAM
+Run the programme using the remix web-based IDE at https://remix.ethereum.org/ and create a new file.
+
+contract MyToken {
+
+// Public variables here
+    string public tokenName = "BOOM";
+    string public tokenAbbrv = "BOM";
+    uint public totalSupply = 0;
+
+// mapping variable here
+    
+       mapping(address => uint) public balances;
+
+// mint function
+       
+       function mint (address _address, uint _value) public {
+        totalSupply += _value;
+        balances[_address] += _value;
+    } 
+// burn function
+    
+       function burn (address _address, uint _value) public{
+        if (balances[_address] >= _value) {
+            totalSupply -= _value;
+            balances[_address] -= _value;
+
+        }
+    }
+
+}
+
+# AUTHORS
+Jonarth L. Erispe - 8212759@ntc.edu.ph
